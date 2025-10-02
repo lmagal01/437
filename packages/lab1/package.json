@@ -1,0 +1,17 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "luism",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server public -p 8080"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+
