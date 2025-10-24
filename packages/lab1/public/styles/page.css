@@ -4,6 +4,7 @@
     --text: #3B3B3B;
     --header-bg: #5C6B9C;
     --text-header: #3B3B3B;
+    --link-color: rgb(0, 28, 128);
 
 
 }
@@ -15,12 +16,15 @@
     background-color: var(--bg);
 }
 header{
+    padding: 40px;    
+    color: var(--bg);
     background-color: var(--header-bg);
     text-align: center;
+    font-size: 40px;
 }
 
 a{
-    color:whitesmoke;
+    color: var(--link-color);
 }
 
 ul.center{
@@ -41,5 +45,6 @@ ul.center{
 .teams_body{
     background-color: var(--bg);
     color: var(--text);
+    text-align: center;
 }
 
