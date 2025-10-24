@@ -38,3 +38,10 @@ ul.center{
     text-align: center;
 }
 
+svg.icon {
+    display: inline;
+    height: 1em;
+    width: 1em;
+    vertical-align: top;
+    fill: currentColor;
+  }
