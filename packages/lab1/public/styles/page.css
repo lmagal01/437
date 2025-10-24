@@ -1,13 +1,3 @@
-
-:root{
-    --bg:#D3D3D3;
-    --text: #3B3B3B;
-    --header-bg: #5C6B9C;
-    --text-header: #3B3B3B;
-    --link-color: rgb(0, 28, 128);
-
-
-}
 .center{
     display:block;
     margin-left: auto;
