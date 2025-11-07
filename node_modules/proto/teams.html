@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/styles/tokens.css"/>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+    <title>TEAMS</title>
+</head>
+<header>
+        <h1 class= "teams_header" >Teams</h1>
+</header>
+<body class ="teams_body">
+<h2 style = "text-align: center">
+    <a href="index.html">
+        Home
+    </a>
+</h2>
+
+<img src="images/UEFAMAP.jpeg" class="center" width = "400" height= "400">
+ <ul class = "teams_body-body">
+    <li>
+    <svg class="icon">
+        <use href="/icons/ball.svg#icon-ball" />
+      </svg>
+    <uefa-team
+        img-src="/images/Ajax.png"
+        href="/Ajax.html">
+        Ajax (NED)
+    </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Arsenal.png"
+            href="/Arsenal.html">
+            Arsenal (ENG)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Atalanta.png"
+            href="/Atalanta.html">
+            Arsenal (ENG)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/AthleticBilbao.png"
+            href="/AthleticBilbao.html">
+            Athletic Bilbao (ESP)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Atletico.png"
+            href="/Atletico.html">
+            Atletico Madrid (ESP)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Dortmund.png"
+            href="/Dortmund.html">
+            Dortmun (GER)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Barcelona.png"
+            href="/Barcelona.html">
+            Barcelona (ESP)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Bayern.png"
+            href="/Bayern.html">
+            Bayern Munich (GER)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Benfica.png"
+            href="/Benfica.html">
+            Benfica (POR)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/BodoGlimt.png"
+            href="/Bodo.html">
+            BodoGlimt (NOR)
+        </uefa-team>
+    </li>
+    <li>
+        <svg class="icon">
+            <use href="/icons/ball.svg#icon-ball" />
+          </svg>
+        <uefa-team
+            img-src="/images/Chelsea.png"
+            href="/Chelsea.html">
+            Chelsea (ENG)
+        </uefa-team>
+    </li>
+    <li>
+        More teams to be added shortly
+    </li>
+
+ </ul>
+</body>
+<script type ="module">
+    import{define} from "@calpoly/mustang";
+    import{UefaTeam} from "/src/uefa-teams.ts";
+
+    define({
+        "uefa-team" : UefaTeam
+    })
+</script>
+</html>

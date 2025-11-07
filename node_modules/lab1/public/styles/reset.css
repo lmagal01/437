@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .teams_body-body{
+    line-height: 1.5;
+    grid-template-columns: var(--columnss);
+    gap: var(--gap);
+    padding: var(--body-padding);
+  }
+  img {
+    max-width: 100%;
+  }
+  .teams_body-body {
+    display: grid;
+    grid-template-columns: var(--columnss);
+    gap: var(--gap);                
+    margin: 2rem auto;
+    max-width: 800px;        
+  }
+  
+  .teams_body-body li {
+    background: var(--bg);
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: var(--body-padding);
+    text-align: center;
+  }

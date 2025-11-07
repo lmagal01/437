@@ -1,0 +1,51 @@
+.center{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: var(--center-bg);
+    color: var(--center-text);
+}
+header{
+    padding: 40px;    
+    color: var(--bg);
+    background-color: var(--header-bg);
+    text-align: center;
+    font-size: 40px;
+}
+
+a{
+    color: var(--link-color);
+}
+
+ul.center{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-position: inside;
+}
+.teams_header{
+    padding: 40px;    
+    color: var(--bg);
+    background-color: var(--header-bg);
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.teams_body{
+    background-color: var(--bg);
+    color: var(--text);
+    text-align: center;
+}
+
+svg.icon {
+    display: inline;
+    height: 1em;
+    width: 1em;
+    vertical-align: top;
+    fill: currentColor;
+  }
+
+
+  

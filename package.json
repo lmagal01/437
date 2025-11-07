@@ -12,9 +12,10 @@
   },
   "author": "Luis M",
   "license": "ISC",
-  
-    "workspaces": [
-        "packages/*"
-    ]
-
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "patch-package": "^8.0.1"
+  }
 }

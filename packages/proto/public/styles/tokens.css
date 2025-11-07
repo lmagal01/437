@@ -1,0 +1,20 @@
+:root{
+    --bg:#D3D3D3;
+    --text: #3B3B3B;
+    --header-bg: #5C6B9C;
+    --text-header: #3B3B3B;
+    --link-color: rgb(0, 28, 128);
+    --body-padding: 10px;
+    --columnss: 1fr 1fr 1fr 1fr;
+    --gap: 2px;
+
+    --center-bg: var(--bg);
+    --center-text: var(--text);
+
+
+}
+
+body.dark-mode {
+    --center-bg: darkslategray ;
+    --center-text: black;
+  }
