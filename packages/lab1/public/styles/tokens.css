@@ -8,5 +8,13 @@
     --columnss: 1fr 1fr 1fr 1fr;
     --gap: 2px;
 
+    --center-bg: var(--bg);
+    --center-text: var(--text);
+
 
 }
+
+body.dark-mode {
+    --center-bg: darkslategray ;
+    --center-text: black;
+  }

@@ -3,7 +3,8 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background-color: var(--bg);
+    background-color: var(--center-bg);
+    color: var(--center-text);
 }
 header{
     padding: 40px;    
@@ -45,3 +46,6 @@ svg.icon {
     vertical-align: top;
     fill: currentColor;
   }
+
+
+  
