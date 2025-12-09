@@ -23,6 +23,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_uefa_team_svc = __toESM(require("./services/uefa-team-svc"));
+var import_uefa_teams = __toESM(require("./routes/uefa-teams"));
 var import_mongo = require("./services/mongo");
 var import_path = __toESM(require("path"));
 (0, import_mongo.connect)("uefa");
@@ -31,6 +32,8 @@ const port = process.env.PORT || 3e3;
 const staticDir = import_path.default.join(process.cwd(), "../proto/dist");
 console.log("Serving static from:", staticDir);
 app.use(import_express.default.static(staticDir));
+app.use(import_express.default.json());
+app.use("/api/uefa-teams", import_uefa_teams.default);
 app.get("/", (req, res) => {
   res.sendFile(import_path.default.join(staticDir, "index.html"));
 });
@@ -48,5 +51,10 @@ app.get("/uefa-teams/:name", (req, res) => {
     } else {
       res.status(404).send();
     }
+  });
+});
+app.get("/uefa-teams", (_req, res) => {
+  import_uefa_team_svc.default.index().then((teams) => {
+    res.set("Content-Type", "application/json").send(JSON.stringify(teams));
   });
 });

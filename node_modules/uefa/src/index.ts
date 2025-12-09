@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express";
 import UefaTeams from "./services/uefa-team-svc";
+import TeamsRouter from "./routes/uefa-teams";
+
 // in src/index.ts
 // add this import near the top
 import { connect } from "./services/mongo";
@@ -13,6 +15,12 @@ const staticDir = path.join(process.cwd(), "../proto/dist");
 console.log("Serving static from:", staticDir);
 
 app.use(express.static(staticDir));
+
+app.use(express.json());
+
+app.use("/api/uefa-teams", TeamsRouter);
+
+
 
 app.get("/", (req: Request, res: Response) => {
   res.sendFile(path.join(staticDir, "index.html"));
@@ -38,3 +46,12 @@ app.get("/uefa-teams/:name", (req: Request, res: Response) => {
     }
   });
 });
+
+app.get("/uefa-teams", (_req: Request, res: Response) => {
+  UefaTeams.index().then((teams) => {
+    res
+      .set("Content-Type", "application/json")
+      .send(JSON.stringify(teams));
+  });
+});
+

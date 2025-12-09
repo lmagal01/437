@@ -38,4 +38,21 @@ function index() {
 function get(name) {
   return UefaTeamModel.findOne({ name }).exec();
 }
-var uefa_team_svc_default = { index, get };
+function create(json) {
+  const t = new UefaTeamModel(json);
+  return t.save();
+}
+function update(name, team) {
+  return UefaTeamModel.findOneAndUpdate({ name }, team, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${name} not updated`;
+    return updated;
+  });
+}
+function remove(name) {
+  return UefaTeamModel.findOneAndDelete({ name }).then((deleted) => {
+    if (!deleted) throw `${name} not deleted`;
+  });
+}
+var uefa_team_svc_default = { index, get, create, update, remove };
