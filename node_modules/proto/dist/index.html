@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+   <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/tokens.css"/>
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header>
+    <img src="images/Champions.png" class="center">
+ </header>
+ 
+ 
+ <section class="center">
+   <label id="darkmode-label">
+      <input type="checkbox" autocomplete="off" />
+      Dark Mode
+    </label>
+    <a href="teams.html">
+    <h2 >Teams</h2>
+    </a>
+    <a href="Account.html">
+    <h3>Login/Sign Up</h3>
+    </a>
+    <img src="images/UEFAMAP.jpeg" width = "400" height= "400">
+ </section>
+ <script>
+   const label = document.getElementById("darkmode-label");
+   label.onchange = function(event) {
+      const checkbox = event.target;
+
+      event.stopPropagation();
+
+      const toggleEvent = new CustomEvent("darkmode:toggle",{
+         bubbles: true,
+         detail:{
+            checked: checkbox.checked
+         }
+      });
+      label.dispatchEvent(toggleEvent);
+   }
+    document.body.addEventListener("darkmode:toggle", function(event){
+      const isChecked = event.detail.checked;
+
+      if(isChecked){
+         document.body.classList.add("dark-mode");
+      }else{
+         document.body.classList.remove("dark-mode");
+      } 
+      
+   });
+ </script>
+ </body>
+</html>
