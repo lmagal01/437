@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <header>
+  <title>UEFA Teams</title>
+  </header>
+  <link rel="stylesheet" href="/styles/tokens.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/button.css" />
+  <link rel="stylesheet" href="/styles/standings.css" />
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">   <script type="module" src="/src/main.ts"></script>
+  
+</head>
+<body>
+  <mu-history provides="uefa:history">
+    <mu-auth provides="uefa:auth">
+      <mu-store provides="uefa:model">
+        <article>
+          <uefa-header></uefa-header>
+          <mu-switch></mu-switch>
+        </article>
+      </mu-store>
+    </mu-auth>
+  </mu-history>
+</body>
+</html>

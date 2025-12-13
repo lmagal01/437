@@ -1,0 +1,33 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "My SPA",
+  "keywords": [],
+  "homepage": "https://github.com/lmagal01/437#readme",
+  "bugs": {
+    "url": "https://github.com/lmagal01/437/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmagal01/437.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "compile": "npx tsc",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  },
+  "dependencies": {
+    "@calpoly/mustang": "^1.0.18",
+    "lit": "^3.3.1",
+    "server": "^1.0.42"
+  }
+}

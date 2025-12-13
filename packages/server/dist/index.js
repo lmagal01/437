@@ -21,40 +21,35 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
+var import_dotenv = __toESM(require("dotenv"));
 var import_express = __toESM(require("express"));
-var import_uefa_team_svc = __toESM(require("./services/uefa-team-svc"));
-var import_uefa_teams = __toESM(require("./routes/uefa-teams"));
-var import_mongo = require("./services/mongo");
 var import_path = __toESM(require("path"));
+var import_uefa_teams = __toESM(require("./routes/uefa-teams"));
+var import_auth = __toESM(require("./routes/auth"));
+var import_users = __toESM(require("./routes/users"));
+var import_mongo = require("./services/mongo");
+import_dotenv.default.config();
 (0, import_mongo.connect)("uefa");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
-const staticDir = import_path.default.join(process.cwd(), "../proto/dist");
-console.log("Serving static from:", staticDir);
-app.use(import_express.default.static(staticDir));
+const staticDir = import_path.default.resolve(__dirname, process.env.STATIC || "../../app/dist");
+console.log("Serving static assets from:", staticDir);
 app.use(import_express.default.json());
-app.use("/api/uefa-teams", import_uefa_teams.default);
-app.get("/", (req, res) => {
-  res.sendFile(import_path.default.join(staticDir, "index.html"));
-});
-app.get("/hello", (req, res) => {
-  res.send("Hello, World");
-});
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
-app.get("/uefa-teams/:name", (req, res) => {
-  const { name } = req.params;
-  import_uefa_team_svc.default.get(name).then((team) => {
-    if (team) {
-      res.set("Content-Type", "application/json").send(JSON.stringify(team));
-    } else {
-      res.status(404).send();
+app.use("/auth", import_auth.default);
+app.use("/api/teams", import_auth.authenticateUser, import_uefa_teams.default);
+app.use("/api/users", import_users.default);
+app.use(import_express.default.static(staticDir));
+app.use((req, res) => {
+  console.log(`[SPA Fallback] Serving index.html for request: ${req.url}`);
+  const indexHtml = import_path.default.join(staticDir, "index.html");
+  res.sendFile(indexHtml, (err) => {
+    if (err) {
+      console.error("Failed to send index.html for SPA fallback:", err);
+      console.error(`Path attempted: ${indexHtml}`);
+      res.status(500).send("Error loading application.");
     }
   });
 });
-app.get("/uefa-teams", (_req, res) => {
-  import_uefa_team_svc.default.index().then((teams) => {
-    res.set("Content-Type", "application/json").send(JSON.stringify(teams));
-  });
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });

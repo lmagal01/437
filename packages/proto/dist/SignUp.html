@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/styles/tokens.css"/>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <title>Sign Up</title>
+
+
+  <script type="module" src="/src/auth/signup-form.ts"></script>
+</head>
+<body class="page">
+  <mu-auth>
+    <h2>Create Account</h2>
+    <main class="card">
+      <signup-form>
+        <label>
+          <span>Username:</span>
+          <input name="username" autocomplete="off" />
+        </label>
+        <label>
+          <span>Password:</span>
+          <input type="password" name="password" />
+        </label>
+        <label>
+          <span>Confirm Password:</span>
+          <input type="password" name="confirmPassword" />
+        </label>
+      </signup-form>
+    </main>
+    <p>Already have an account? <a href="login.html">Log in here</a>.</p>
+  </mu-auth>
+</body>
+</html>

@@ -4,7 +4,12 @@
   "description": "Lab1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preview": "vite preview",
+    
+    "build": "npm run build --workspace=packages/app && npm run build --workspace=packages/server",
+    
+    "start:app": "npm start --workspace=packages/server"
   },
   "repository": {
     "type": "git",

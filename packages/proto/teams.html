@@ -2,39 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="public/styles/tokens.css"/>
-  <link rel="stylesheet" href="public/styles/reset.css" />
-  <link rel="stylesheet" href="public/styles/page.css" />
+  <link rel="stylesheet" href="/styles/tokens.css"/>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
   <title>TEAMS</title>
 </head>
 
-<header>
-  <h1 class="teams_header">Teams</h1>
-</header>
-
 <body class="teams_body">
-  <h2 style="text-align: center">
-    <a href="index.html">
-      Home
-    </a>
-  </h2>
+  <mu-auth provides="uefa:auth">
+    <uefa-header></uefa-header>
 
-  <img src="public/images/UEFAMAP.jpeg" class="center" width="400" height="400">
+    <h2 style="text-align: center">
+      <a href="index.html">Home</a>
+    </h2>
 
-  <uefa-team-list src="public/data/uefa-teams.json"></uefa-team-list>
+    <img src="/images/UEFAMAP.jpeg" class="center" width="400" height="400">
+
+    <uefa-team-list src="/api/teams"></uefa-team-list>
+  </mu-auth>
+
+  <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    
+    
+    import { HeaderElement } from "/src/header.js";
+    import { UefaTeam } from "/src/uefa-teams.js";
+    import { UefaTeamList } from "/src/uefa-team-list.js";
+
+    define({
+      "mu-auth": Auth.Provider,
+      "uefa-header": HeaderElement,
+      "uefa-team": UefaTeam,
+      "uefa-team-list": UefaTeamList
+    });
+  </script>
 </body>
-
-<script type="module">
-  import { define } from "@calpoly/mustang";
-  import { UefaTeam } from "/src/uefa-teams.ts";
-  import { UefaTeamList } from "/src/uefa-team-list.ts";
-
-  define({
-    "uefa-team": UefaTeam,
-    "uefa-team-list": UefaTeamList
-  });
-</script>
 </html>

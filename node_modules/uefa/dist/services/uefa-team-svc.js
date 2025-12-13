@@ -26,8 +26,7 @@ const UefaTeamSchema = new import_mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
     imgSrc: { type: String, required: true, trim: true },
-    href: { type: String, required: true, trim: true },
-    country: { type: String, required: true, trim: true }
+    href: { type: String, required: true, trim: true }
   },
   { collection: "uefa_teams" }
 );

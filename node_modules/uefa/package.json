@@ -15,14 +15,22 @@
   "author": "Luis Magallon",
   "type": "commonjs",
   "main": "dist/index.js",
+  "exports": {
+    "./models": {
+      "import": "./src/models/index.ts"
+    }
+  },
+
   "scripts": {
-    "dev": "nodemon",
+    "dev": "npx nodemon",
     "build": "npx etsc",
-    "start": "npm run build && npm run start:node",
+    "start": "node dist/index.js",
     "start:node": "node dist/index.js",
     "start:proto": "cross-env STATIC=../proto/dist npm run start",
-    "check": "tsc --noEmit"
-  },
+    
+    "start:app": "cross-env STATIC=../../app/dist npm run start"  
+  }
+    ,
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "dotenv": "^17.2.3",

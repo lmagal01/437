@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/styles/tokens.css"/>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap" rel="stylesheet">
+  <title>TEAMS</title>
+  <script type="module" crossorigin src="/assets/teams-BB-6mB0Q.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/state-CZRbe6Np.js">
+  <link rel="modulepreload" crossorigin href="/assets/header-49WJBvJY.js">
+</head>
+
+<body class="teams_body">
+  <mu-auth provides="uefa:auth">
+    <uefa-header></uefa-header>
+
+    <h2 style="text-align: center">
+      <a href="index.html">Home</a>
+    </h2>
+
+    <img src="/images/UEFAMAP.jpeg" class="center" width="400" height="400">
+
+    <uefa-team-list src="/api/teams"></uefa-team-list>
+  </mu-auth>
+
+</body>
+</html>
